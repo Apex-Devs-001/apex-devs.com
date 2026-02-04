@@ -119,7 +119,7 @@ Videos are set to autoplay, muted, and loop for optimal UX.
 
 ## 📧 Contact
 
-- **Email**: hello@apex-devs.com
+- **Email**: contact@apex-devs.com
 - **Calendly**: https://calendly.com/apexdevs
 
 ## 📝 License

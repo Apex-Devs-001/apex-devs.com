@@ -1,19 +1,23 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Script from 'next/script';
+import LoadingScreen from '@/components/LoadingScreen';
+
+declare global {
+  interface Window {
+    Calendly: any;
+  }
+}
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 1500);
-
     // Smooth scroll for anchor links
     const handleAnchorClick = (e: MouseEvent) => {
-      const target = e.target as HTMLAnchorElement;
-      if (target.tagName === 'A' && target.getAttribute('href')?.startsWith('#')) {
+      const target = (e.target as HTMLElement).closest('a');
+      if (target && target.getAttribute('href')?.startsWith('#')) {
         e.preventDefault();
         const id = target.getAttribute('href')?.slice(1);
         const element = id ? document.getElementById(id) : null;
@@ -59,9 +63,7 @@ export default function Home() {
   return (
     <>
       {/* Loading Screen */}
-      <div className={`loading-screen ${!loading ? 'hidden' : ''}`}>
-        <div className="loading-text">INITIALIZING...</div>
-      </div>
+      {loading && <LoadingScreen onFinished={() => setLoading(false)} />}
 
       {/* Navigation */}
       <nav>
@@ -429,9 +431,25 @@ export default function Home() {
         <p className="cta-description">
           Get your free 15-minute global audit. We&apos;ll analyze your current stack, security posture, cloud spend, and growth opportunities — with concrete savings estimates tailored to your region and industry.
         </p>
-        <a href="https://calendly.com/apexdevs" className="cta-button">SCHEDULE AUDIT</a>
+
+        <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="lazyOnload" />
+        <a 
+          href="#" 
+          onClick={(e) => {
+            e.preventDefault();
+            if (window.Calendly) {
+              window.Calendly.initPopupWidget({
+                url: 'https://calendly.com/apexdevs001/30min?background_color=1a1a1a&text_color=ffffff&primary_color=ffffff'
+              });
+            }
+          }} 
+          className="cta-button"
+        >
+          SCHEDULE AUDIT
+        </a>
+        {/* <a href="https://calendly.com/apexdevs" className="cta-button">SCHEDULE AUDIT</a> */}
         <div className="contact-info">
-          <p>or contact us: <strong><a href="mailto:hello@apex-devs.com">hello@apex-devs.com</a></strong></p>
+          <p>or contact us: <strong><a href="mailto:contact@apex-devs.com">contact@apex-devs.com</a></strong></p>
         </div>
       </section>
 
