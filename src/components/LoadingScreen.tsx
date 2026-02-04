@@ -133,7 +133,7 @@ export default function LoadingScreen({ onFinished }: { onFinished: () => void }
             </div>
             <div className="loader-divider-horizontal"></div>
             <div className="loader-text-item">
-              <ScrambleText text="A NEW CLASS" delay={0.8} />
+              <ScrambleText text="A NEW CLASS OF ENGINEERING" delay={0.8} />
             </div>
           </div>
         </div>
@@ -141,7 +141,7 @@ export default function LoadingScreen({ onFinished }: { onFinished: () => void }
         {/* Column 5 */}
         <div className="loader-column side">
           <div className="loader-text-item dim">
-            <ScrambleText text="A NEW CLASS OF ENGINEERING" delay={1.0} />
+            <ScrambleText text="EXCELLENCE | ENGINEERING" delay={1.0} />
           </div>
         </div>
       </div>
