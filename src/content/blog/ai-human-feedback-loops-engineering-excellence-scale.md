@@ -1,6 +1,6 @@
 ---
 title: "How We Use AI + Human Feedback Loops to Achieve Engineering Excellence at Scale"
-date: "2026-02-07"
+date: "2025-10-11"
 description: "Discover how ApexDevs combines AI-powered tools with ruthless human feedback loops to ship code 5× faster, cut cloud costs by 40–65%, and maintain 99.99% uptime consistently."
 author: "Apex Devs Team"
 coverImage: "/images/blog/ai-human-feedback-loops.jpg"
