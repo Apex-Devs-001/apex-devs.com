@@ -79,7 +79,7 @@ When chaos engineering is combined with rich observability and automated feedbac
 
 | Metric                                | Traditional Monitoring | Feedback-Driven SRE (Apex Devs avg) | Improvement   |
 | ------------------------------------- | ---------------------- | ----------------------------------- | ------------- |
-| Annual downtime                       | 8–40 hours             | < 52 minutes (99.99%)               | 10–40× better |
+| Annual downtime                       | 8–40 hours             | &lt; 52 minutes (99.99%)            | 10–40× better |
 | Cloud cost reduction (first 90 days)  | 0–15%                  | 40–65%                              | 3–10× better  |
 | MTTR (P1 incidents)                   | 2–8 hours              | 15–90 minutes                       | 3–8× faster   |
 | Major security incidents (past 24 mo) | Frequent               | Zero                                | —             |

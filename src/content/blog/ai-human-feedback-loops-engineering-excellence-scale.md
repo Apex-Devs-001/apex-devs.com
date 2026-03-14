@@ -72,15 +72,15 @@ This isn't just "using AI better." It's **teaching AI to think like our best sen
 
 ## Real Numbers — Before vs After
 
-| Metric                      | Before AI + Feedback Loops | After (2026) | Improvement           |
-| --------------------------- | -------------------------- | ------------ | --------------------- |
-| Deployment Frequency        | Weekly                     | 5–15× / day  | 5–15× faster          |
-| Lead Time for Changes       | 4–10 days                  | <24 hours    | 70–90% reduction      |
-| Change Failure Rate         | 15–25%                     | <5%          | 70–80% lower          |
-| Cloud Cost Reduction        | —                          | 40–65%       | $100k–$1M+ saved/yr   |
-| Flow Efficiency             | 8–15%                      | 25–40%       | 2–3× more productive  |
-| Mean Time to Recover (MTTR) | 4–12 hours                 | <60 minutes  | 4–10× faster recovery |
-| Uptime                      | ~99%                       | 99.99%+      | Enterprise-grade      |
+| Metric                      | Before AI + Feedback Loops | After (2026)   | Improvement           |
+| --------------------------- | -------------------------- | -------------- | --------------------- |
+| Deployment Frequency        | Weekly                     | 5–15× / day    | 5–15× faster          |
+| Lead Time for Changes       | 4–10 days                  | &lt;24 hours   | 70–90% reduction      |
+| Change Failure Rate         | 15–25%                     | &lt;5%         | 70–80% lower          |
+| Cloud Cost Reduction        | —                          | 40–65%         | $100k–$1M+ saved/yr   |
+| Flow Efficiency             | 8–15%                      | 25–40%         | 2–3× more productive  |
+| Mean Time to Recover (MTTR) | 4–12 hours                 | &lt;60 minutes | 4–10× faster recovery |
+| Uptime                      | ~99%                       | 99.99%+        | Enterprise-grade      |
 
 These aren't theoretical. They're averages across client projects running right now.
 
