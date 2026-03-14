@@ -56,6 +56,4 @@ These aren't guidelines—they're our DNA. We don't bend them. Ever.
 
 When you partner with Apex Devs, you get principled execution, not empty promises.
 
-**Ready for a new class of engineering? Let's build something exceptional.**
-
-_Explore how we live this manifesto → [apex-devs.com](https://apex-devs.com/)_
+<BlogCTA title="Ready for a new class of engineering?" description="Let's build something exceptional." />

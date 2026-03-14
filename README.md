@@ -124,7 +124,7 @@ Videos are set to autoplay, muted, and loop for optimal UX.
 
 ## 📝 License
 
-©2026 ApexDevs. All Rights Reserved.
+©2026 Apex Devs LLC. All Rights Reserved.
 
 ## 🔄 Migration Notes
 

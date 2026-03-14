@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { marked } from 'marked';
+
 
 const postsDirectory = path.join(process.cwd(), 'src/content/blog');
 
@@ -25,7 +25,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost> {
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
 
-  const htmlContent = await marked.parse(content);
+
 
   return {
     slug: realSlug,
@@ -34,7 +34,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost> {
     description: data.description,
     author: data.author,
     coverImage: data.coverImage,
-    content: htmlContent as string,
+    content: content,
   };
 }
 

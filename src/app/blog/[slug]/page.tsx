@@ -3,6 +3,13 @@ import { notFound } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import CTAButton from '@/components/CTAButton';
 import '../blog.css';
+import { MDXRemote } from 'next-mdx-remote/rsc';
+import BlogCTA from '@/components/BlogCTA';
+
+const components = {
+  CTAButton,
+  BlogCTA,
+};
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -39,18 +46,11 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
         </header>
 
-        <div 
-          className="blog-post-content"
-          dangerouslySetInnerHTML={{ __html: post.content }}
-        />
-
-        <div className="final-cta" style={{ marginTop: '100px', padding: '100px 0' }}>
-          <h2 className="cta-title">Ready to build <strong>excellence</strong>?</h2>
-          <p className="cta-description">
-            Experience the senior-only difference. Let's discuss how we can accelerate your 2026 roadmap.
-          </p>
-          <CTAButton text="Book a Strategic Review" />
+        <div className="blog-post-content">
+          <MDXRemote source={post.content} components={components} />
         </div>
+
+
       </main>
       </>
     );

@@ -106,4 +106,4 @@ We offer a **free 15-minute global stack audit** where we'll look at your curren
 
 No sales fluff. Just numbers and clarity.
 
-Ready to audit your stack and unlock real savings? Contact us for a free 15-minute global review—tailored to your security, cloud, and growth needs. Let's build excellence that compounds.
+<BlogCTA />

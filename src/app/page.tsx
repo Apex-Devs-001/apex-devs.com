@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import LoadingScreen from '@/components/LoadingScreen';
-import Navbar from '@/components/Navbar';
-import CTAButton from '@/components/CTAButton';
+import { useEffect, useState } from "react";
+import LoadingScreen from "@/components/LoadingScreen";
+import Navbar from "@/components/Navbar";
+import CTAButton from "@/components/CTAButton";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -11,49 +11,50 @@ export default function Home() {
   useEffect(() => {
     // Smooth scroll for anchor links
     const handleAnchorClick = (e: MouseEvent) => {
-      const target = (e.target as HTMLElement).closest('a');
-      if (target && target.getAttribute('href')?.startsWith('#')) {
-        const href = target.getAttribute('href');
-        if (href === '#') return;
-        
+      const target = (e.target as HTMLElement).closest("a");
+      if (target && target.getAttribute("href")?.startsWith("#")) {
+        const href = target.getAttribute("href");
+        if (href === "#") return;
+
         const id = href?.slice(1);
         const element = id ? document.getElementById(id) : null;
         if (element) {
           e.preventDefault();
           element.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
+            behavior: "smooth",
+            block: "start",
           });
         }
       }
     };
 
-    document.addEventListener('click', handleAnchorClick);
+    document.addEventListener("click", handleAnchorClick);
 
     // Intersection observer for animations
     const observerOptions = {
       threshold: 0.1,
-      rootMargin: '0px 0px -100px 0px'
+      rootMargin: "0px 0px -100px 0px",
     };
 
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          (entry.target as HTMLElement).style.opacity = '1';
-          (entry.target as HTMLElement).style.transform = 'translateY(0)';
+          (entry.target as HTMLElement).style.opacity = "1";
+          (entry.target as HTMLElement).style.transform = "translateY(0)";
         }
       });
     }, observerOptions);
 
-    document.querySelectorAll('.section').forEach(section => {
-      (section as HTMLElement).style.opacity = '0';
-      (section as HTMLElement).style.transform = 'translateY(30px)';
-      (section as HTMLElement).style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+    document.querySelectorAll(".section").forEach((section) => {
+      (section as HTMLElement).style.opacity = "0";
+      (section as HTMLElement).style.transform = "translateY(30px)";
+      (section as HTMLElement).style.transition =
+        "opacity 0.8s ease, transform 0.8s ease";
       observer.observe(section);
     });
 
     return () => {
-      document.removeEventListener('click', handleAnchorClick);
+      document.removeEventListener("click", handleAnchorClick);
       observer.disconnect();
     };
   }, []);
@@ -74,9 +75,16 @@ export default function Home() {
         <div className="hero-overlay"></div>
         <div className="hero-content fade-in-up">
           <div className="hero-label">APX | APEXDEVS 001</div>
-          <h1>A New Class of<br /><strong>Engineering</strong></h1>
+          <h1>
+            A New Class of
+            <br />
+            <strong>Engineering</strong>
+          </h1>
           <p className="hero-subtitle">
-            Global senior teams delivering end-to-end product success — AI-native development, 99.99% reliability, enterprise-grade security, and 40–65% cost reduction. Distributed excellence across continents.
+            Global senior teams delivering end-to-end product success —
+            AI-native development, 99.99% reliability, enterprise-grade
+            security, and 40–65% cost reduction. Distributed excellence across
+            continents.
           </p>
         </div>
         <div className="scroll-indicator">
@@ -89,9 +97,16 @@ export default function Home() {
       <section className="section section-dark">
         <div className="invitation">
           <div className="section-number">002 / INVITATION ONLY</div>
-          <h2 className="section-title">Unmatched Access to<br />Elite Engineering</h2>
+          <h2 className="section-title">
+            Unmatched Access to
+            <br />
+            Elite Engineering
+          </h2>
           <p className="section-description">
-            Where others build with what&apos;s available, we forge what&apos;s exceptional. This is a gateway to senior-only teams, AI-accelerated development, and institutional-grade protection. Not every company is meant to work with us.
+            Where others build with what&apos;s available, we forge what&apos;s
+            exceptional. This is a gateway to senior-only teams, AI-accelerated
+            development, and institutional-grade protection. Not every company
+            is meant to work with us.
           </p>
         </div>
       </section>
@@ -102,9 +117,16 @@ export default function Home() {
           <source src="/videos/8760caa0-582a50ce.mp4" type="video/mp4" />
         </video>
         <div className="video-content">
-          <h2 className="section-title">Elite Development.<br />Tokenized Protection.</h2>
+          <h2 className="section-title">
+            Elite Development.
+            <br />
+            Tokenized Protection.
+          </h2>
           <p className="section-description">
-            One-of-a-kind access to senior engineering teams with 9+ years average experience. From AI-native builds to self-healing infrastructure — all secured through institutional-grade DevOps and continuous SecOps monitoring.
+            One-of-a-kind access to senior engineering teams with 9+ years
+            average experience. From AI-native builds to self-healing
+            infrastructure — all secured through institutional-grade DevOps and
+            continuous SecOps monitoring.
           </p>
         </div>
       </section>
@@ -113,7 +135,11 @@ export default function Home() {
       <section className="section section-darker">
         <div className="invitation">
           <div className="section-number">003 / CAPABILITIES</div>
-          <h2 className="section-title">Building the Products That<br />Redefine Industries</h2>
+          <h2 className="section-title">
+            Building the Products That
+            <br />
+            Redefine Industries
+          </h2>
         </div>
 
         <div className="services-grid">
@@ -177,7 +203,11 @@ export default function Home() {
       <section className="section section-dark">
         <div className="invitation">
           <div className="section-number">004 / TECHNOLOGY FOCUS</div>
-          <h2 className="section-title">Specializing in Technology<br />That Shapes the Future</h2>
+          <h2 className="section-title">
+            Specializing in Technology
+            <br />
+            That Shapes the Future
+          </h2>
         </div>
 
         <div className="logo-grid">
@@ -200,28 +230,40 @@ export default function Home() {
       <section className="section section-darker">
         <div className="invitation">
           <div className="section-number">005 / PROVEN RESULTS</div>
-          <h2 className="section-title">Performance That<br />Speaks for Itself</h2>
+          <h2 className="section-title">
+            Performance That
+            <br />
+            Speaks for Itself
+          </h2>
         </div>
 
         <div className="stats-container">
           <div className="stat-item">
             <div className="stat-number">67%</div>
-            <div className="stat-label">Faster deployments across international markets</div>
+            <div className="stat-label">
+              Faster deployments across international markets
+            </div>
           </div>
 
           <div className="stat-item">
             <div className="stat-number">48%</div>
-            <div className="stat-label">Average cloud cost reduction in first 90 days</div>
+            <div className="stat-label">
+              Average cloud cost reduction in first 90 days
+            </div>
           </div>
 
           <div className="stat-item">
             <div className="stat-number">3.4×</div>
-            <div className="stat-label">User growth via integrated, region-aware marketing</div>
+            <div className="stat-label">
+              User growth via integrated, region-aware marketing
+            </div>
           </div>
 
           <div className="stat-item">
             <div className="stat-number">Zero</div>
-            <div className="stat-label">Security incidents or breaches since inception</div>
+            <div className="stat-label">
+              Security incidents or breaches since inception
+            </div>
           </div>
         </div>
 
@@ -249,32 +291,48 @@ export default function Home() {
       <section className="section section-dark">
         <div className="invitation">
           <div className="section-number">006 / ENGAGEMENT</div>
-          <h2 className="section-title">From Selection<br />to Legacy</h2>
+          <h2 className="section-title">
+            From Selection
+            <br />
+            to Legacy
+          </h2>
         </div>
 
         <div className="process-grid">
           <div className="process-step">
             <div className="step-number">01</div>
             <h3 className="step-title">Selection</h3>
-            <p className="step-description">We analyze your stack, security posture, and growth potential. Only serious builds proceed.</p>
+            <p className="step-description">
+              We analyze your stack, security posture, and growth potential.
+              Only serious builds proceed.
+            </p>
           </div>
 
           <div className="process-step">
             <div className="step-number">02</div>
             <h3 className="step-title">Alignment</h3>
-            <p className="step-description">Onboarding process to align architecture, vision, and delivery timeline with precision.</p>
+            <p className="step-description">
+              Onboarding process to align architecture, vision, and delivery
+              timeline with precision.
+            </p>
           </div>
 
           <div className="process-step">
             <div className="step-number">03</div>
             <h3 className="step-title">Execution</h3>
-            <p className="step-description">AI-accelerated development with 24/7 global teams. SecOps monitoring from day one.</p>
+            <p className="step-description">
+              AI-accelerated development with 24/7 global teams. SecOps
+              monitoring from day one.
+            </p>
           </div>
 
           <div className="process-step">
             <div className="step-number">04</div>
             <h3 className="step-title">Compounding</h3>
-            <p className="step-description">Your product scales seamlessly while we handle infrastructure, security, and optimization.</p>
+            <p className="step-description">
+              Your product scales seamlessly while we handle infrastructure,
+              security, and optimization.
+            </p>
           </div>
         </div>
       </section>
@@ -283,59 +341,95 @@ export default function Home() {
       <section className="section section-darker">
         <div className="invitation">
           <div className="section-number">007 / DIFFERENTIATION</div>
-          <h2 className="section-title">Execution vs<br />Empty Promises</h2>
+          <h2 className="section-title">
+            Execution vs
+            <br />
+            Empty Promises
+          </h2>
         </div>
 
         <div className="comparison-container">
           <div className="comparison-item">
             <div className="comparison-side new">
               <div className="comparison-label">ApexDevs Standard</div>
-              <h3 className="comparison-title highlight">Smart Contract Enforcement</h3>
-              <p className="comparison-description">AI-powered pipelines auto-deploy, self-heal, and enforce SLAs. If metrics drop, alerts trigger instantly.</p>
+              <h3 className="comparison-title highlight">
+                Smart Contract Enforcement
+              </h3>
+              <p className="comparison-description">
+                AI-powered pipelines auto-deploy, self-heal, and enforce SLAs.
+                If metrics drop, alerts trigger instantly.
+              </p>
             </div>
             <div className="comparison-side">
               <div className="comparison-label">Traditional Model</div>
               <h3 className="comparison-title">Manual Promises</h3>
-              <p className="comparison-description">Deals vanish, timelines slip, teams ghost. No accountability, no automation.</p>
+              <p className="comparison-description">
+                Deals vanish, timelines slip, teams ghost. No accountability, no
+                automation.
+              </p>
             </div>
           </div>
 
           <div className="comparison-item">
             <div className="comparison-side new">
               <div className="comparison-label">ApexDevs Standard</div>
-              <h3 className="comparison-title highlight">White-Glove Stewardship</h3>
-              <p className="comparison-description">Every client is sovereign. Direct Slack access, weekly syncs, dedicated account management.</p>
+              <h3 className="comparison-title highlight">
+                White-Glove Stewardship
+              </h3>
+              <p className="comparison-description">
+                Every client is sovereign. Direct Slack access, weekly syncs,
+                dedicated account management.
+              </p>
             </div>
             <div className="comparison-side">
               <div className="comparison-label">Traditional Model</div>
               <h3 className="comparison-title">Disposable Support</h3>
-              <p className="comparison-description">Ghosted by support, tickets ignored, capital treated as disposable.</p>
+              <p className="comparison-description">
+                Ghosted by support, tickets ignored, capital treated as
+                disposable.
+              </p>
             </div>
           </div>
 
           <div className="comparison-item">
             <div className="comparison-side new">
               <div className="comparison-label">ApexDevs Standard</div>
-              <h3 className="comparison-title highlight">Bespoke Flexibility</h3>
-              <p className="comparison-description">Custom team compositions, timezone-aligned squads, architecture tailored to your exact needs.</p>
+              <h3 className="comparison-title highlight">
+                Bespoke Flexibility
+              </h3>
+              <p className="comparison-description">
+                Custom team compositions, timezone-aligned squads, architecture
+                tailored to your exact needs.
+              </p>
             </div>
             <div className="comparison-side">
               <div className="comparison-label">Traditional Model</div>
               <h3 className="comparison-title">One-Size-Fits-All</h3>
-              <p className="comparison-description">You take what&apos;s given. No customization, no choice, no strategy.</p>
+              <p className="comparison-description">
+                You take what&apos;s given. No customization, no choice, no
+                strategy.
+              </p>
             </div>
           </div>
 
           <div className="comparison-item">
             <div className="comparison-side new">
               <div className="comparison-label">ApexDevs Standard</div>
-              <h3 className="comparison-title highlight">Engineered Liquidity</h3>
-              <p className="comparison-description">Modular architecture, documented APIs, seamless team transitions. Your codebase, your control.</p>
+              <h3 className="comparison-title highlight">
+                Engineered Liquidity
+              </h3>
+              <p className="comparison-description">
+                Modular architecture, documented APIs, seamless team
+                transitions. Your codebase, your control.
+              </p>
             </div>
             <div className="comparison-side">
               <div className="comparison-label">Traditional Model</div>
               <h3 className="comparison-title">Vendor Lock-In</h3>
-              <p className="comparison-description">Trapped in proprietary systems. Years locked waiting for refactors that never come.</p>
+              <p className="comparison-description">
+                Trapped in proprietary systems. Years locked waiting for
+                refactors that never come.
+              </p>
             </div>
           </div>
         </div>
@@ -345,7 +439,11 @@ export default function Home() {
       <section className="section section-dark">
         <div className="invitation">
           <div className="section-number">008 / INVESTMENT</div>
-          <h2 className="section-title">Transparent Pricing<br />for Global Scale</h2>
+          <h2 className="section-title">
+            Transparent Pricing
+            <br />
+            for Global Scale
+          </h2>
         </div>
 
         <div className="pricing-container">
@@ -402,9 +500,17 @@ export default function Home() {
           </div>
         </div>
 
-        <div style={{ textAlign: 'center', marginTop: '60px', color: 'var(--text-secondary)' }}>
+        <div
+          style={{
+            textAlign: "center",
+            marginTop: "60px",
+            color: "var(--text-secondary)",
+          }}
+        >
           <p>No hidden fees · Unlimited revisions in scope · Cancel anytime</p>
-          <p style={{ marginTop: '10px' }}>Outcome-focused: Pay for results, not just hours</p>
+          <p style={{ marginTop: "10px" }}>
+            Outcome-focused: Pay for results, not just hours
+          </p>
         </div>
       </section>
 
@@ -412,9 +518,18 @@ export default function Home() {
       <section className="section section-darker">
         <div className="invitation">
           <div className="section-number">009 / FOUNDATION</div>
-          <h2 className="section-title">Built by Engineers,<br />for Companies That Win</h2>
-          <p className="section-description" style={{ marginTop: '40px' }}>
-            Founded by veteran engineering leaders with 10+ years of full-stack experience and expert partners in SRE, SecOps, and growth. We saw too many companies overpay for fragmented teams. So we built one unified, senior-only, AI-accelerated powerhouse — distributed across continents to deliver timezone-perfect execution, unbreakable security, and massive cost efficiency.
+          <h2 className="section-title">
+            Built by Engineers,
+            <br />
+            for Companies That Win
+          </h2>
+          <p className="section-description" style={{ marginTop: "40px" }}>
+            Founded by veteran engineering leaders with 10+ years of full-stack
+            experience and expert partners in SRE, SecOps, and growth. We saw
+            too many companies overpay for fragmented teams. So we built one
+            unified, senior-only, AI-accelerated powerhouse — distributed across
+            continents to deliver timezone-perfect execution, unbreakable
+            security, and massive cost efficiency.
           </p>
         </div>
       </section>
@@ -422,21 +537,34 @@ export default function Home() {
       {/* Final CTA */}
       <section className="final-cta" id="contact">
         <div className="section-number">010 / ACCESS</div>
-        <h2 className="cta-title">Ready to Build Smarter,<br />Scale Safer, Save Globally?</h2>
+        <h2 className="cta-title">
+          Ready to Build Smarter,
+          <br />
+          Scale Safer, Save Globally?
+        </h2>
         <p className="cta-description">
-          Get your free 15-minute global audit. We&apos;ll analyze your current stack, security posture, cloud spend, and growth opportunities — with concrete savings estimates tailored to your region and industry.
+          Get your free 15-minute global audit. We&apos;ll analyze your current
+          stack, security posture, cloud spend, and growth opportunities — with
+          concrete savings estimates tailored to your region and industry.
         </p>
 
         <CTAButton />
         <div className="contact-info">
-          <p>or contact us: <strong><a href="mailto:contact@apex-devs.com">contact@apex-devs.com</a></strong></p>
+          <p>
+            or contact us:{" "}
+            <strong>
+              <a href="mailto:contact@apex-devs.com">contact@apex-devs.com</a>
+            </strong>
+          </p>
         </div>
       </section>
 
       {/* Footer */}
       <footer>
-        <p>©2026 ApexDevs. All Rights Reserved.</p>
-        <p style={{ marginTop: '10px', opacity: 0.5 }}>Building the future, globally.</p>
+        <p>©2026 Apex Devs LLC. All Rights Reserved.</p>
+        <p style={{ marginTop: "10px", opacity: 0.5 }}>
+          Building the future, globally.
+        </p>
       </footer>
     </>
   );
